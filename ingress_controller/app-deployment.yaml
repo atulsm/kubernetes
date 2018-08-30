@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: kubernetes-bootcamp
+  name: kubernetes-bootcamp
+spec:
+  template:
+    metadata:
+      labels:
+        run: kubernetes-bootcamp
+    spec:
+      containers:
+      - image: gcr.io/google-samples/kubernetes-bootcamp:v1
+        name: kubernetes-bootcamp
+        ports:
+        - containerPort: 8080
+

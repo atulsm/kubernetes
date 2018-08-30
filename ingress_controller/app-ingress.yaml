@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  name: app-ingress
+spec:
+  rules:
+  - host: sentinel-dev-156.labs.blr.novell.com
+    http:
+      paths:
+      - backend:
+          serviceName: kubernetes-bootcamp-service1
+          servicePort: 1111
+        path: /app1
